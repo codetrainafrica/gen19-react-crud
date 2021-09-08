@@ -1,12 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 
-class UserList extends Component {
-  render() {
-    return (
-      <div>
-        <h1>User List</h1>
-      </div>
-    );
-  }
+function UserList(props) {
+  //contains users array
+  const users = props.data;
+
+  return (
+    <div>
+      {
+        //loops through the users array and display some JSX for each item
+        users.map((user, index) => {
+          return (
+            <div key={index}>
+              <h1>{user.name}</h1>
+              <h3>{user.email}</h3>
+            </div>
+          );
+        })
+      }
+    </div>
+  );
 }
 export default UserList;
