@@ -1,11 +1,29 @@
 import React, { useState } from "react";
 
-function UserForm() {
+function UserForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  function handleSubmit(e) {
+    //prevents the page from refreshing when form is submitted
+    e.preventDefault();
+
+    //object with the new user
+    let user = {
+      name: name,
+      email: email,
+    };
+
+    //calls the addUser function in App.js
+    props.addUser(user);
+
+    //sets name, email state to empty strings
+    setName("");
+    setEmail("");
+  }
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <input
         type="text"
         name="fullname"
