@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 
-function UserForm() {
+function UserForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+
+    let newUser = {
+      name: name,
+      email: email,
+    };
+
+    props.addUser(newUser);
+
+    setName("");
+    setEmail("");
   }
 
   return (
