@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import User from "./User";
+import { Modal, Button } from "react-bootstrap";
 
 function UserList(props) {
   return (
     <div>
-      {props.users.map((user) => {
+      {props.users.map((user, index) => {
         return (
           <div>
-            <h1>{user.name}</h1>
-            <h3>{user.email}</h3>
+            <User
+              user={user}
+              key={user.id}
+              deleteUser={props.deleteUser}
+              editUser={props.editUser}
+            />
           </div>
         );
       })}

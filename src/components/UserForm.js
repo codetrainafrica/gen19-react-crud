@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
+
+export const arr = [];
 
 function UserForm(props) {
   const [name, setName] = useState("");
@@ -7,15 +10,20 @@ function UserForm(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    let newUser = {
-      name: name,
-      email: email,
-    };
+    if (email && name) {
+      let newUser = {
+        name: name,
+        email: email,
+        id: uuid(),
+      };
 
-    props.addUser(newUser);
+      console.log(newUser);
 
-    setName("");
-    setEmail("");
+      props.addUser(newUser);
+
+      setName("");
+      setEmail("");
+    }
   }
 
   return (
