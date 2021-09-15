@@ -5,16 +5,15 @@ import { Modal, Button } from "react-bootstrap";
 function UserList(props) {
   return (
     <div>
-      {props.users.map((user, index) => {
+      {props.users.map((user) => {
+        //renders the User component for each user in the users array
         return (
-          <div>
-            <User
-              user={user}
-              key={user.id}
-              deleteUser={props.deleteUser}
-              editUser={props.editUser}
-            />
-          </div>
+          <User
+            user={user}
+            key={user.id}
+            deleteUser={props.deleteUser}
+            editUser={props.editUser}
+          />
         );
       })}
     </div>

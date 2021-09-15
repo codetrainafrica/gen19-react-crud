@@ -4,9 +4,14 @@ import EditUserForm from "./EditUserForm";
 
 function User(props) {
   const user = props.user;
+
+  //state to handle modal
   const [showModal, setShowModal] = useState(false);
 
+  //function to toggle modal
   function toggleModal() {
+    //sets the showModal state the opposite of what
+    //it currently is
     setShowModal(!showModal);
   }
 
@@ -21,11 +26,13 @@ function User(props) {
         Delete
       </Button>
 
+      {/*Modal to edit user*/}
       <Modal show={showModal} onHide={() => toggleModal()}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {/*Component to edit user*/}
           <EditUserForm
             user={user}
             editUser={props.editUser}
@@ -36,7 +43,6 @@ function User(props) {
           <Button variant="secondary" onClick={() => toggleModal()}>
             Close
           </Button>
-          <Button variant="primary">Save Changes</Button>
         </Modal.Footer>
       </Modal>
     </div>

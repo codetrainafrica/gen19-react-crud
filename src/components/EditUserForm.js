@@ -14,12 +14,14 @@ export default function EditUserForm(props) {
   };
 
   function handleSubmit() {
+    //combines the new user details
     let editedUser = {
       name: name,
       email: email,
       id: props.user.id,
     };
 
+    //calls the edit User function and closes the modal
     props.editUser(editedUser, props.user.id);
     props.toggleModal();
   }

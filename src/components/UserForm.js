@@ -1,7 +1,6 @@
 import React, { useState } from "react";
+//package to generate unique id
 import { v4 as uuid } from "uuid";
-
-export const arr = [];
 
 function UserForm(props) {
   const [name, setName] = useState("");
@@ -14,10 +13,9 @@ function UserForm(props) {
       let newUser = {
         name: name,
         email: email,
+        //adds a unique id to the new user
         id: uuid(),
       };
-
-      console.log(newUser);
 
       props.addUser(newUser);
 
