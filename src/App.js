@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import UserForm from "./components/UserForm";
+import  {Container, Row, Col}from "react-bootstrap";
 import UserList from "./components/UserList";
 
 function App() {
@@ -37,10 +39,26 @@ function App() {
   }
 
   return (
-    <div>
-      <UserForm addUser={addUser} />
-      <UserList users={users} deleteUser={deleteUser} editUser={editUser} />
-    </div>
+    
+    <Container fluid style={{ marginTop:"5 rem"}}>
+      <Row>
+        <Col md="5">
+        <UserForm addUser={addUser} />
+        </Col>
+
+        <Col md="5 ">
+        <UserList users={users} deleteUser={deleteUser} editUser={editUser} />
+    
+        </Col>
+
+
+
+
+      </Row>
+    </Container>
+      
+
+
   );
 }
 
