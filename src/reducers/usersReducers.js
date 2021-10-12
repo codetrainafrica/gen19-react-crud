@@ -1,3 +1,9 @@
+
+import { useState } from "react";
+//package to generate unique id
+import { v4 as uuid } from "uuid";
+
+
 const initialState ={
 users:[
     {
@@ -20,7 +26,30 @@ users:[
 
 
 const usersReducers=(state = initialState, action)=>{
-    return {...state.users, action}
+
+    
+   // return {...state.users, action}
+   switch (action.type) {
+       case "ADD_USER":
+        function UserForm(props) {
+            const [name] = useState("");
+            const [email] = useState("");
+                 
+        if (email && name) {
+            let newUser = {
+              name: name,
+              email: email,
+              //adds a unique id to the new user
+              id: uuid(),
+            };
+        
+       return {...state, users: [...state.users, newUser]};
+        }     
+           
+    }
+       default:
+           return state;
+   }
 
 };
 
