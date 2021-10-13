@@ -1,11 +1,8 @@
-const addUser =(user)=>{
-   return {
-        type:"ADD_USER",
-        payload:user
-
-    }
-   
+//action to add new user
+export const addUser = (newUser) => {
+  //returns the type of action and data to send to the store
+  return {
+    type: "ADD_USER",
+    payload: newUser,
+  };
 };
-
-
-export default action;

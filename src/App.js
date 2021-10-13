@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import UserForm from "./components/UserForm";
-import  {Container, Row, Col}from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import UserList from "./components/UserList";
 
 function App() {
   const [users, setUsers] = useState([]);
-
-  function addUser(user) {
-    setUsers([...users, user]);
-  }
 
   //function to edit user
   function editUser(newDetails, userId) {
@@ -39,26 +35,17 @@ function App() {
   }
 
   return (
-    
-    <Container fluid style={{ marginTop:"5 rem"}}>
+    <Container fluid style={{ marginTop: "5 rem" }}>
       <Row>
         <Col md="5">
-        <UserForm addUser={addUser} />
+          <UserForm />
         </Col>
 
         <Col md="5 ">
-        <UserList users={users} deleteUser={deleteUser} editUser={editUser} />
-    
+          <UserList deleteUser={deleteUser} editUser={editUser} />
         </Col>
-
-
-
-
       </Row>
     </Container>
-      
-
-
   );
 }
 
