@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UserForm from "./components/UserForm";
 import  {Container, Row, Col}from "react-bootstrap";
 import UserList from "./components/UserList";
+import {connect} from "react-redux"
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -61,5 +62,6 @@ function App() {
 
   );
 }
+
 
 export default App;

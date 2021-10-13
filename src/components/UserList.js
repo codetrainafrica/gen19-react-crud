@@ -1,5 +1,5 @@
-
-//import React, { useState } from "react";
+import { connect } from 'react-redux';
+import React, { useState } from "react";
 import User from "./User";
 //import { Modal, Button } from "react-bootstrap";
 
@@ -20,5 +20,11 @@ function UserList(props) {
     </div>
   );
 }
+const mapStateToProps =(state)=>{
+ return { users:state.users
 
-export default UserList;
+ }
+}
+
+export default connect(mapStateToProps,)(UserList);
+  
