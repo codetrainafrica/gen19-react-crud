@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Col}  from "react-bootstrap";
 //package to generate unique id
+import { connect } from 'react-redux';
+import {addUser} from "../actions/userActions"
 import { v4 as uuid } from "uuid";
 
 function UserForm(props) {
@@ -50,4 +52,9 @@ function UserForm(props) {
   );
 }
 
-export default UserForm;
+
+const mapDispatchToProps={
+   addNewUser:addUser
+};
+
+export default connect(null, mapDispatchToProps)(UserForm);
