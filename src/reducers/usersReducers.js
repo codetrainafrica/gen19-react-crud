@@ -25,7 +25,7 @@ const usersReducers=(state = initialState, action)=>{
       default:
     
  
-    return {state}
+    return state
   }
 };
 
