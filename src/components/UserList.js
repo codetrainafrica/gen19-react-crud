@@ -2,7 +2,6 @@
 import User from "./User";
 import { connect } from "react-redux";
 //import { Modal, Button } from "react-bootstrap";
-import { connect } from "react-redux";
 
 function UserList(props) {
 	return (
