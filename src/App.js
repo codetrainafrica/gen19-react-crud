@@ -7,10 +7,10 @@ import { getAllUsers } from "./actions/userActions";
 import { connect } from "react-redux";
 
 function App(props) {
+	const [users, setUsers] = useState([]);
 	useEffect(() => {
 		props.getAllUsers();
 	}, []);
-	const [users, setUsers] = useState([]);
 
 	function addUser(user) {
 		setUsers([...users, user]);

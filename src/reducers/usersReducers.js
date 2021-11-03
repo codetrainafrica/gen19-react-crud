@@ -31,7 +31,7 @@ const usersReducers = (state = initialState, action) => {
 
 			return { ...state, users: updatedUsers };
 		case "SET_ALL_USERS":
-			return { uers: action.payload };
+			return { users: action.payload };
 
 		default:
 			return state;
