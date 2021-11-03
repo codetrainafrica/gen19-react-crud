@@ -1,13 +1,12 @@
 //import {ADD_USER} from "../actions/userActions"
 const initialState = {
 	users: [
-		{
-			name: "Zakyyyyyy",
-			email: "zak@email.com",
-			id: "84379843.fsdjhj",
-		},
-
-		{ name: "Kobi", email: "kobu@email.com", id: "skdlj4839483" },
+		// {
+		// 	name: "Zakyyyyyy",
+		// 	email: "zak@email.com",
+		// 	id: "84379843.fsdjhj",
+		// },
+		// { name: "Kobi", email: "kobu@email.com", id: "skdlj4839483" },
 	],
 };
 
@@ -31,6 +30,8 @@ const usersReducers = (state = initialState, action) => {
 			});
 
 			return { ...state, users: updatedUsers };
+		case "SET_ALL_USERS":
+			return { uers: action.payload };
 
 		default:
 			return state;

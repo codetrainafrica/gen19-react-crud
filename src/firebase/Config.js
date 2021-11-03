@@ -2,15 +2,15 @@ import firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyAflQ9LU0JfJLIhDrBcx-ojmKP2yndNgHw",
-	authDomain: "school-app-3598e.firebaseapp.com",
-	projectId: "school-app-3598e",
-	storageBucket: "school-app-3598e.appspot.com",
-	messagingSenderId: "621633493097",
-	appId: "1:621633493097:web:0fe6cfc387e244969f2af8",
+	apiKey: "AIzaSyDytEPa_ft7ZbBvZneOJ3DfcAMANbAfMAU",
+	authDomain: "users-gen19-app.firebaseapp.com",
+	projectId: "users-gen19-app",
+	storageBucket: "users-gen19-app.appspot.com",
+	messagingSenderId: "879413350780",
+	appId: "1:879413350780:web:d3799e9808e393881b54f9",
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export default firebase
+export default firebase;
