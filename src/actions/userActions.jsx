@@ -5,13 +5,20 @@ export const addUser = (user) => {
 		getFirestore()
 			.collection("users")
 			.add(user)
-			.then(() => {
-				dispatch({
-					type: "ADD_USER",
-					payload: user,
-				});
-			});
+			.then(() => {});
 	};
+
+	// return (dispatch, state, { getFirestore }) => {
+	// 	getFirestore()
+	// 		.collection("users")
+	// 		.add(user)
+	// 		.then(() => {
+	// 			dispatch({
+	// 				type: "ADD_USER",
+	// 				payload: user,
+	// 			});
+	// 		});
+	// };
 
 	// console.log("addUser", user);
 	// //user.id = Math.random().toString();
